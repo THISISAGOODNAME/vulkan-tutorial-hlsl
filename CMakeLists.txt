@@ -52,3 +52,4 @@ include_directories(3rd_party/volk)
 
 add_subdirectory(CH1_triangle)
 add_subdirectory(CH2_RTXdemo)
+add_subdirectory(CH3_RTXdemoKHR)
