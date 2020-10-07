@@ -47,4 +47,8 @@ include_directories(3rd_party/vulkan-header)
 # config stb_image & tinyobjloader
 include_directories(3rd_party/others)
 
+# config volk
+include_directories(3rd_party/volk)
+
 add_subdirectory(CH1_triangle)
+add_subdirectory(CH2_RTXdemo)
