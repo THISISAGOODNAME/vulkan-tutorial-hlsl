@@ -600,7 +600,9 @@ int main(int, char**)
         }
 
         // 4. IMGUI Markdown
+        ImGui::Begin("Markdown");
         MarkdownExample();
+        ImGui::End();
 
         // Rendering
         ImGui::Render();
