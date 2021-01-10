@@ -29,3 +29,7 @@
 ![](CH5_debugprintf/screenshot/Snipaste_2021-01-10_01-21-14.png)
 
 [debug_printf](https://github.com/KhronosGroup/Vulkan-ValidationLayers/blob/master/docs/debug_printf.md)
+
+![hlsl printf](CH5_debugprintf/screenshot/Snipaste_2021-01-10_10-30-27.png)
+
+[hlsl printf function](https://docs.microsoft.com/en-us/windows/win32/direct3dhlsl/printf)
