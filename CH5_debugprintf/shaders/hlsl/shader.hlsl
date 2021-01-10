@@ -26,18 +26,35 @@ VSOutput vert(VSInput vin)
 		// CHECK:                OpExtension "SPV_KHR_non_semantic_info"
 		// CHECK: [[set:%\d+]] = OpExtInstImport "NonSemantic.DebugPrintf"
 
-		// CHECK: {{%\d+}} = OpExtInst %void [[set]] 1 [[format1]]
-  		printf(first);
-		// CHECK: {{%\d+}} = OpExtInst %void [[set]] 1 [[format2]]
-  		printf(second);
-		// CHECK: {{%\d+}} = OpExtInst %void [[set]] 1 [[format3]]
-  		printf("please print this message.\n");
-		// CHECK: {{%\d+}} = OpExtInst %void [[set]] 1 [[format4]] %uint_1 %uint_2 %float_1_5
-  		printf("Variables are: %d %d %.2f\n", 1u, 2u, 1.5f);
-		// CHECK: {{%\d+}} = OpExtInst %void [[set]] 1 [[format5]] %int_1 %int_2 %int_3
-  		printf("Integers are: %d %d %d\n", 1, 2, 3);
-		// CHECK: {{%\d+}} = OpExtInst %void [[set]] 1 [[format6]] %int_1 %int_2 %int_3 %int_4 %int_5 %int_6 %int_7 %int_8 %int_9 %int_10
-  		printf("More: %d %d %d %d %d %d %d %d %d %d\n", 1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+		float myfloat = 3.1415f;
+        int foo = -135;
+
+        printf("Here are two float values %f, %f\n", 1.0, myfloat);
+
+        printf("Here's a smaller float value %1.2f\n", myfloat);
+
+        printf("Here's an integer %i with text before and after it\n", foo);
+
+        foo = 256;
+        printf("Here's an integer in octal %o and hex 0x%x\n", foo, foo);
+
+        foo = -135;
+        printf("%d is a negative integer\n", foo);
+
+        float4 floatvec = float4(1.2f, 2.2f, 3.2f, 4.2f);
+        printf("Here's a vector of floats %1.2v4f\n", floatvec);
+
+        printf("Here's a float in sn %e\n", myfloat);
+
+        printf("Here's a float in sn %1.2e\n", myfloat);
+
+        printf("Here's a float in shortest %g\n", myfloat);
+
+        printf("Here's a float in hex %1.9a\n", myfloat);
+
+        printf("First printf with a %% and no value\n");
+
+        printf("Second printf with a value %i\n", foo);
 	}
 
 	return vout;
